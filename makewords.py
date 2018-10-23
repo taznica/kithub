@@ -21,7 +21,7 @@ def get_two_letter_words():
 
 def write_to_file():
     with open('./au.txt', mode='w') as f:
-        f.writelines('\n'.join(find_au_words()))
+        f.writelines('\n'.join(get_au_words()))
 
 
 def read_from_file():
@@ -50,7 +50,7 @@ def tokenize_all(text):
         print(text + ': ' + nm.parse(text))
 
 
-def find_au_words():
+def get_au_words():
     tlw = get_two_letter_words()
     au_words = []
 
@@ -63,7 +63,7 @@ def find_au_words():
 
 
 def find_valid_words():
-    au_words = find_au_words()
+    au_words = get_au_words()
     words = []
     for word in au_words:
         # words = tokenize(word)
